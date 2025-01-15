@@ -26,4 +26,14 @@ class Student:
         communication_queue.append(event)
         print(f"\n[APPLY] {self.name} applied to {university_name} for the course: {course} (Event: {event.name})")
 
-        
+class University:
+    def __init__(self, name):
+        self.name = name
+
+    def process_event(self, event):
+        if isinstance(event, ApplicationSentEvent):
+            self.handle_application(event)
+
+
+            
+
