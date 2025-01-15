@@ -21,4 +21,9 @@ class Student:
         self.country= country
         self.email= email
 
-    
+    def apply(self, university_name, course)
+        event = ApplicationSentEvent({"student_name": self.name, "university": university_name, "course": course})
+        communication_queue.append(event)
+        print(f"\n[APPLY] {self.name} applied to {university_name} for the course: {course} (Event: {event.name})")
+
+        
