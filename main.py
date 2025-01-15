@@ -3,7 +3,6 @@ class Event:
     def __init__(self, payload):
         self.payload = payload
 
-
 class ApplicationSentEvent(Event):
     name = "application_sent"
 
